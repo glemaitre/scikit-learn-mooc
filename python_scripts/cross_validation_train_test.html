@@ -123,7 +123,7 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="01_tabular_data_exploration.html">
-     Tabular data exploration
+     First look at our dataset
     </a>
    </li>
    <li class="toctree-l2">
@@ -141,8 +141,13 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="02_numerical_pipeline.html">
+    <a class="reference internal" href="02_numerical_pipeline_introduction.html">
      First model with scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_numerical_pipeline_hands_on.html">
+     Working with numerical data
     </a>
    </li>
    <li class="toctree-l2">
@@ -1140,7 +1145,7 @@ error on the testing set.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The generalization error of our model is 47.14 k$
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The generalization error of our model is 47.08 k$
 </pre></div>
 </div>
 </div>
@@ -1227,33 +1232,33 @@ it into a pandas dataframe to ease visualization and manipulation.</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.141538</td>
-      <td>0.002622</td>
-      <td>-45.739918</td>
+      <td>0.200893</td>
+      <td>0.003613</td>
+      <td>-46.606798</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.135881</td>
-      <td>0.002639</td>
-      <td>-44.361115</td>
+      <td>0.195778</td>
+      <td>0.003118</td>
+      <td>-44.854593</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.136443</td>
-      <td>0.002567</td>
-      <td>-44.992988</td>
+      <td>0.196059</td>
+      <td>0.003069</td>
+      <td>-45.678476</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.137090</td>
-      <td>0.002553</td>
-      <td>-44.349214</td>
+      <td>0.197058</td>
+      <td>0.003479</td>
+      <td>-46.896944</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.137578</td>
-      <td>0.002580</td>
-      <td>-45.291979</td>
+      <td>0.201681</td>
+      <td>0.003599</td>
+      <td>-44.908690</td>
     </tr>
   </tbody>
 </table>
@@ -1305,73 +1310,73 @@ where “higher is better”, this explains we used
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.141538</td>
-      <td>0.002622</td>
-      <td>-45.739918</td>
-      <td>45.739918</td>
+      <td>0.200893</td>
+      <td>0.003613</td>
+      <td>-46.606798</td>
+      <td>46.606798</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.135881</td>
-      <td>0.002639</td>
-      <td>-44.361115</td>
-      <td>44.361115</td>
+      <td>0.195778</td>
+      <td>0.003118</td>
+      <td>-44.854593</td>
+      <td>44.854593</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.136443</td>
-      <td>0.002567</td>
-      <td>-44.992988</td>
-      <td>44.992988</td>
+      <td>0.196059</td>
+      <td>0.003069</td>
+      <td>-45.678476</td>
+      <td>45.678476</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.137090</td>
-      <td>0.002553</td>
-      <td>-44.349214</td>
-      <td>44.349214</td>
+      <td>0.197058</td>
+      <td>0.003479</td>
+      <td>-46.896944</td>
+      <td>46.896944</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.137578</td>
-      <td>0.002580</td>
-      <td>-45.291979</td>
-      <td>45.291979</td>
+      <td>0.201681</td>
+      <td>0.003599</td>
+      <td>-44.908690</td>
+      <td>44.908690</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.133225</td>
-      <td>0.002762</td>
-      <td>-46.495246</td>
-      <td>46.495246</td>
+      <td>0.198843</td>
+      <td>0.003252</td>
+      <td>-44.447763</td>
+      <td>44.447763</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.132889</td>
-      <td>0.002574</td>
-      <td>-45.894103</td>
-      <td>45.894103</td>
+      <td>0.200241</td>
+      <td>0.003279</td>
+      <td>-46.507380</td>
+      <td>46.507380</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.138986</td>
-      <td>0.002571</td>
-      <td>-46.131730</td>
-      <td>46.131730</td>
+      <td>0.203057</td>
+      <td>0.003664</td>
+      <td>-46.378019</td>
+      <td>46.378019</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.134165</td>
-      <td>0.002577</td>
-      <td>-45.668669</td>
-      <td>45.668669</td>
+      <td>0.199853</td>
+      <td>0.003468</td>
+      <td>-45.332286</td>
+      <td>45.332286</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0.132278</td>
-      <td>0.002562</td>
-      <td>-45.960869</td>
-      <td>45.960869</td>
+      <td>0.201724</td>
+      <td>0.003574</td>
+      <td>-46.234098</td>
+      <td>46.234098</td>
     </tr>
   </tbody>
 </table>
@@ -1423,7 +1428,7 @@ ranges from 43 k$ to 49 k$.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The mean cross-validated generalization error is: 45.65 k$
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The mean cross-validated generalization error is: 45.91 k$
 </pre></div>
 </div>
 </div>
@@ -1438,7 +1443,7 @@ ranges from 43 k$ to 49 k$.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The standard deviation of the generalization error is: 1.09 k$
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The standard deviation of the generalization error is: 1.00 k$
 </pre></div>
 </div>
 </div>
@@ -1555,8 +1560,8 @@ trade-off between under-fitting and over-fitting.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 295 ms, sys: 13.7 ms, total: 308 ms
-Wall time: 9.13 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 466 ms, sys: 39.1 ms, total: 505 ms
+Wall time: 13 s
 </pre></div>
 </div>
 </div>

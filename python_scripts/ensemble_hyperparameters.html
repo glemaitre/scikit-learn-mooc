@@ -123,7 +123,7 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="01_tabular_data_exploration.html">
-     Tabular data exploration
+     First look at our dataset
     </a>
    </li>
    <li class="toctree-l2">
@@ -141,8 +141,13 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="02_numerical_pipeline.html">
+    <a class="reference internal" href="02_numerical_pipeline_introduction.html">
      First model with scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_numerical_pipeline_hands_on.html">
+     Working with numerical data
     </a>
    </li>
    <li class="toctree-l2">
@@ -925,63 +930,63 @@ forest.</p>
       <th>8</th>
       <td>30</td>
       <td>None</td>
-      <td>0.793155</td>
+      <td>0.795760</td>
       <td>1</td>
     </tr>
     <tr>
       <th>7</th>
       <td>20</td>
       <td>None</td>
-      <td>0.792844</td>
+      <td>0.787951</td>
       <td>2</td>
     </tr>
     <tr>
       <th>6</th>
       <td>10</td>
       <td>None</td>
-      <td>0.775874</td>
+      <td>0.776648</td>
       <td>3</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>30</td>
-      <td>5</td>
-      <td>0.665760</td>
-      <td>4</td>
     </tr>
     <tr>
       <th>4</th>
       <td>20</td>
       <td>5</td>
-      <td>0.664887</td>
+      <td>0.662281</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>30</td>
+      <td>5</td>
+      <td>0.660112</td>
       <td>5</td>
     </tr>
     <tr>
       <th>3</th>
       <td>10</td>
       <td>5</td>
-      <td>0.662621</td>
+      <td>0.658361</td>
       <td>6</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>20</td>
-      <td>3</td>
-      <td>0.562280</td>
-      <td>7</td>
     </tr>
     <tr>
       <th>2</th>
       <td>30</td>
       <td>3</td>
-      <td>0.560539</td>
+      <td>0.562759</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>20</td>
+      <td>3</td>
+      <td>0.561629</td>
       <td>8</td>
     </tr>
     <tr>
       <th>0</th>
       <td>10</td>
       <td>3</td>
-      <td>0.557588</td>
+      <td>0.556952</td>
       <td>9</td>
     </tr>
   </tbody>
@@ -1068,7 +1073,7 @@ similar to having a too large tree depth.</p>
       <td>50</td>
       <td>5</td>
       <td>0.1</td>
-      <td>0.798395</td>
+      <td>0.798377</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1076,7 +1081,7 @@ similar to having a too large tree depth.</p>
       <td>50</td>
       <td>3</td>
       <td>1</td>
-      <td>0.784700</td>
+      <td>0.783744</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1084,7 +1089,7 @@ similar to having a too large tree depth.</p>
       <td>30</td>
       <td>3</td>
       <td>1</td>
-      <td>0.780036</td>
+      <td>0.781358</td>
       <td>3</td>
     </tr>
     <tr>
@@ -1092,7 +1097,7 @@ similar to having a too large tree depth.</p>
       <td>30</td>
       <td>5</td>
       <td>0.1</td>
-      <td>0.767552</td>
+      <td>0.766518</td>
       <td>4</td>
     </tr>
     <tr>
@@ -1100,7 +1105,7 @@ similar to having a too large tree depth.</p>
       <td>50</td>
       <td>3</td>
       <td>0.1</td>
-      <td>0.754066</td>
+      <td>0.754025</td>
       <td>5</td>
     </tr>
     <tr>
@@ -1108,7 +1113,7 @@ similar to having a too large tree depth.</p>
       <td>10</td>
       <td>5</td>
       <td>1</td>
-      <td>0.752463</td>
+      <td>0.752221</td>
       <td>6</td>
     </tr>
     <tr>
@@ -1116,7 +1121,7 @@ similar to having a too large tree depth.</p>
       <td>30</td>
       <td>5</td>
       <td>1</td>
-      <td>0.746607</td>
+      <td>0.748192</td>
       <td>7</td>
     </tr>
     <tr>
@@ -1132,7 +1137,7 @@ similar to having a too large tree depth.</p>
       <td>50</td>
       <td>5</td>
       <td>1</td>
-      <td>0.735365</td>
+      <td>0.734994</td>
       <td>9</td>
     </tr>
     <tr>
@@ -1148,7 +1153,7 @@ similar to having a too large tree depth.</p>
       <td>30</td>
       <td>None</td>
       <td>0.1</td>
-      <td>0.633488</td>
+      <td>0.634269</td>
       <td>11</td>
     </tr>
     <tr>
@@ -1156,7 +1161,7 @@ similar to having a too large tree depth.</p>
       <td>10</td>
       <td>None</td>
       <td>0.1</td>
-      <td>0.626857</td>
+      <td>0.626351</td>
       <td>12</td>
     </tr>
     <tr>
@@ -1164,7 +1169,7 @@ similar to having a too large tree depth.</p>
       <td>50</td>
       <td>None</td>
       <td>0.1</td>
-      <td>0.623478</td>
+      <td>0.622797</td>
       <td>13</td>
     </tr>
     <tr>
@@ -1172,23 +1177,23 @@ similar to having a too large tree depth.</p>
       <td>10</td>
       <td>5</td>
       <td>0.1</td>
-      <td>0.597269</td>
+      <td>0.597252</td>
       <td>14</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>50</td>
-      <td>None</td>
-      <td>1</td>
-      <td>0.591689</td>
-      <td>15</td>
     </tr>
     <tr>
       <th>15</th>
       <td>10</td>
       <td>None</td>
       <td>1</td>
-      <td>0.591244</td>
+      <td>0.595865</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>50</td>
+      <td>None</td>
+      <td>1</td>
+      <td>0.594377</td>
       <td>16</td>
     </tr>
     <tr>
@@ -1196,7 +1201,7 @@ similar to having a too large tree depth.</p>
       <td>30</td>
       <td>None</td>
       <td>1</td>
-      <td>0.586998</td>
+      <td>0.593470</td>
       <td>17</td>
     </tr>
     <tr>

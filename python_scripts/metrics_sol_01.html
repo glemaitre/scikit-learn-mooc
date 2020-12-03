@@ -123,7 +123,7 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="01_tabular_data_exploration.html">
-     Tabular data exploration
+     First look at our dataset
     </a>
    </li>
    <li class="toctree-l2">
@@ -141,8 +141,13 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="02_numerical_pipeline.html">
+    <a class="reference internal" href="02_numerical_pipeline_introduction.html">
      First model with scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_numerical_pipeline_hands_on.html">
+     Working with numerical data
     </a>
    </li>
    <li class="toctree-l2">
@@ -865,7 +870,7 @@ the accuracy (even if this is the default score).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy score: 0.625 +/- 0.140
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy score: 0.635 +/- 0.135
 </pre></div>
 </div>
 </div>
@@ -879,7 +884,7 @@ the accuracy (even if this is the default score).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Balanced accuracy score: 0.511 +/- 0.099
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Balanced accuracy score: 0.507 +/- 0.103
 </pre></div>
 </div>
 </div>
@@ -935,7 +940,7 @@ in the <code class="docutils literal notranslate"><span class="pre">cross_val_sc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Precision score: 0.248 +/- 0.184
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Precision score: 0.257 +/- 0.164
 </pre></div>
 </div>
 </div>
@@ -958,14 +963,14 @@ for both metrics using a box plot.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([0.00410628, 0.00298905, 0.003021  , 0.00327015, 0.00297976,
-        0.0029676 , 0.00299454, 0.00297856, 0.00297117, 0.00296402]),
- &#39;score_time&#39;: array([0.00238299, 0.0023005 , 0.0022831 , 0.00225115, 0.00226808,
-        0.00238657, 0.00238013, 0.00226927, 0.00250697, 0.0022738 ]),
- &#39;test_accuracy&#39;: array([0.30666667, 0.52      , 0.77333333, 0.56      , 0.65333333,
-        0.68      , 0.69333333, 0.78666667, 0.63513514, 0.75675676]),
- &#39;test_balanced_accuracy&#39;: array([0.42982456, 0.4751462 , 0.66081871, 0.3874269 , 0.48684211,
-        0.44736842, 0.55116959, 0.74561404, 0.45356037, 0.51186791])}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([0.00436831, 0.00354719, 0.00352311, 0.00344825, 0.00353217,
+        0.00347996, 0.00366592, 0.00353813, 0.0035131 , 0.00355124]),
+ &#39;score_time&#39;: array([0.00251365, 0.00238419, 0.0022862 , 0.00241041, 0.00261927,
+        0.00238061, 0.00238895, 0.0023582 , 0.00235295, 0.00235844]),
+ &#39;test_accuracy&#39;: array([0.26666667, 0.53333333, 0.8       , 0.57333333, 0.65333333,
+        0.64      , 0.72      , 0.78666667, 0.63513514, 0.74324324]),
+ &#39;test_balanced_accuracy&#39;: array([0.38450292, 0.48391813, 0.69736842, 0.41520468, 0.48684211,
+        0.42105263, 0.5877193 , 0.74561404, 0.45356037, 0.50309598])}
 </pre></div>
 </div>
 </div>
