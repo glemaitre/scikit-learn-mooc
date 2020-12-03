@@ -1,5 +1,5 @@
 # %% [markdown]
-# # Exercise 02
+# # 📝 Exercise 02
 #
 # The goal of this exercise is to build an intuition on what will be the
 # parameters' values of a linear model when the link between the data and the
@@ -23,10 +23,12 @@ y = x ** 3 - 0.5 * x ** 2 + noise
 
 # %%
 import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_context("talk")
 
 plt.scatter(x, y)
-plt.xlabel('x', size=26)
-_ = plt.ylabel('y', size=26)
+plt.xlabel('x')
+_ = plt.ylabel('y')
 
 # %% [markdown]
 # We observe that the link between the data `x` and target `y` is non-linear.
@@ -47,10 +49,10 @@ def f(x, weight=0, intercept=0):
 
 
 # %%
-# TODO: plot both the data and the model predictions
+# Write your code here.: plot both the data and the model predictions
 
 # %%
-# TODO: compute the mean squared error
+# Write your code here.: compute the mean squared error
 
 # %% [markdown]
 # Train a linear regression model and plot both the data and the predictions
@@ -59,10 +61,11 @@ def f(x, weight=0, intercept=0):
 # %%
 from sklearn.linear_model import LinearRegression
 
-# TODO: fit a linear regression
+# Write your code here.: fit a linear regression
 
 # %%
-# TODO: plot the data and the prediction of the linear regression model
+# Write your code here.: plot the data and the prediction of the linear
+# regression model
 
 # %%
-# TODO: compute the mean squared error
+# Write your code here.: compute the mean squared error

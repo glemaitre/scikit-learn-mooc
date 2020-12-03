@@ -1,5 +1,5 @@
 # %% [markdown]
-# # Exercise 05
+# # 📝 Exercise 05
 # In the previous notebook, we presented a non-penalized logistic regression
 # classifier. This classifier accepts a parameter `penalty` to add a
 # regularization. The regularization strength is set using the parameter `C`.
@@ -77,4 +77,4 @@ logistic_regression = make_pipeline(
     StandardScaler(), LogisticRegression(penalty="l2"))
 
 # %%
-# TODO
+# Write your code here.

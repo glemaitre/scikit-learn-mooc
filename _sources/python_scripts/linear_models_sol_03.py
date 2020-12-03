@@ -1,5 +1,5 @@
 # %% [markdown]
-# # Solution for Exercise 03
+# # 📃 Solution for Exercise 03
 #
 # In all previous notebooks, we only used a single feature in `X`. But we have
 # already shown that we could add new feature to make the model more expressive
@@ -51,6 +51,8 @@ print(f"Mean absolute error on testing set: "
 # %%
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_context("talk")
 
 weights = pd.Series(linear_regression.coef_, index=X.columns)
 weights.plot(kind="barh")

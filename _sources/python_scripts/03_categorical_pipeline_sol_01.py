@@ -13,9 +13,9 @@
 # ---
 
 # %% [markdown]
-# # Solution for Exercise 01
+# # 📃 Solution for Exercise 01
 #
-# The goal of this exercise is to evalutate the impact of using an arbitrary
+# The goal of this exercise is to evaluate the impact of using an arbitrary
 # integer encoding for categorical variables along with a linear
 # classification model such as Logistic Regression.
 #
@@ -23,7 +23,7 @@
 # variables. This preprocessor is assembled in a pipeline with
 # `LogisticRegression`. The performance of the pipeline can be evaluated as
 # usual by cross-validation and then compared to the score obtained when using
-# `OneHotEncoding` or to some other baseline score.
+# `OneHotEncoder` or to some other baseline score.
 #
 # Because `OrdinalEncoder` can raise errors if it sees an unknown category at
 # prediction time, we need to pre-compute the list of all possible categories
@@ -45,6 +45,9 @@ target_name = "class"
 target = df[target_name]
 data = df.drop(columns=[target_name, "fnlwgt"])
 
+# %% [markdown]
+# We can select the categorical based on the `object` dtype.
+
 # %%
 from sklearn.compose import make_column_selector as selector
 
@@ -52,11 +55,19 @@ categorical_columns_selector = selector(dtype_include=object)
 categorical_columns = categorical_columns_selector(data)
 data_categorical = data[categorical_columns]
 
+# %% [markdown]
+# As we saw in the lecture notebook, one of the column has rare categories.
+# Thus, we can make sure to not run into trouble in the cross-validation by
+# specifying the known categories in advance.
+
 # %%
 categories = [
     data[column].unique() for column in data[categorical_columns]]
-
 categories
+
+# %% [markdown]
+# Now, let's make our predictive pipeline by encoding categories with an
+# ordinal encoder before to feed a logistic regression.
 
 # %%
 from sklearn.model_selection import cross_val_score
@@ -74,9 +85,13 @@ print(f"The different scores obtained are: \n{scores}")
 print(f"The accuracy is: {scores.mean():.3f} +- {scores.std():.3f}")
 
 # %% [markdown]
-# Using an arbitrary mapping from string labels to integers as done here causes the linear model to make bad assumptions on the relative ordering of  categories.
+# Using an arbitrary mapping from string labels to integers as done here causes
+# the linear model to make bad assumptions on the relative ordering of
+# categories.
 #
-# This prevent the model to learning anything predictive enough and the cross-validated score is even lower that the baseline we obtained by ignoring the input data and just always predict the most frequent class:
+# This prevent the model to learning anything predictive enough and the
+# cross-validated score is even lower that the baseline we obtained by ignoring
+# the input data and just always predict the most frequent class:
 
 # %%
 from sklearn.dummy import DummyClassifier
@@ -87,15 +102,15 @@ print(f"The different scores obtained are: \n{scores}")
 print(f"The accuracy is: {scores.mean():.3f} +- {scores.std():.3f}")
 
 # %% [markdown]
-# By comparison, a categorical encoding that does not assume any ordering in the
-# categories can lead to a significantly higher score:
+# By comparison, a categorical encoding that does not assume any ordering in
+# the categories can lead to a significantly higher score:
 
 # %%
 from sklearn.preprocessing import OneHotEncoder
 
 model = make_pipeline(
-    OneHotEncoder(handle_unknown="ignore"),
-    LogisticRegression(max_iter=1000))
+    OneHotEncoder(categories=categories, drop="if_binary"),
+    LogisticRegression())
 scores = cross_val_score(model, data_categorical, target)
 print(f"The different scores obtained are: \n{scores}")
 print(f"The accuracy is: {scores.mean():.3f} +- {scores.std():.3f}")

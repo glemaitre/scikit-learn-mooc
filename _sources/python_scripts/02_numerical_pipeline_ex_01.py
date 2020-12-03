@@ -13,7 +13,7 @@
 # ---
 
 # %% [markdown]
-# #  Exercise 01
+# # 📝 Exercise 01
 #
 # The goal of this exercise is to compare the performance of our classifier
 # (81% accuracy) to some baseline classifiers that would ignore the input data
@@ -23,7 +23,7 @@
 # - What would be the score of a model that always predicts `' <= 50K'`?
 # - Is 81% or 82% accuracy a good score for this problem?
 #
-# Use a `DummyClassifier` and do a train-test split to evaluate
+# Use a `sklearn.dummy.DummyClassifier` and do a train-test split to evaluate
 # its accuracy on the test set. This
 # [link](https://scikit-learn.org/stable/modules/model_evaluation.html#dummy-estimators)
 # shows a few examples of how to evaluate the performance of these baseline
@@ -50,4 +50,4 @@ data_numeric = data[numerical_columns]
 from sklearn.model_selection import train_test_split
 from sklearn.dummy import DummyClassifier
 
-# TODO: write me!
+# Write your code here.

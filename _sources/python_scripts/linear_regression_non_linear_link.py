@@ -1,5 +1,5 @@
 # %% [markdown]
-# ### Linear regression with non-linear link between data and target
+# # Linear regression with non-linear link between data and target
 #
 # In the previous exercise, you were asked to train a linear regression model
 # on a dataset where the matrix `X` and the target `y` do not have a linear
@@ -27,10 +27,12 @@ y = x ** 3 - 0.5 * x ** 2 + noise
 
 # %%
 import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_context("talk")
 
 plt.scatter(x, y)
-plt.xlabel('x', size=26)
-_ = plt.ylabel('y', size=26)
+plt.xlabel('x')
+_ = plt.ylabel('y')
 
 # %% [markdown]
 # We will highlight the limitations of fitting a linear regression model as
@@ -46,10 +48,10 @@ X = x.reshape((-1, 1))
 linear_regression.fit(X, y)
 
 y_pred = linear_regression.predict(X)
-plt.plot(x, y_pred, linewidth=4, color="tab:orange")
+plt.plot(x, y_pred, color="tab:orange")
 plt.scatter(x, y)
-plt.xlabel("x", size=26)
-plt.ylabel("y", size=26)
+plt.xlabel("x")
+plt.ylabel("y")
 _ = plt.title(
     f"Mean squared error = "
     f"{mean_squared_error(y, y_pred):.2f}"
@@ -89,13 +91,10 @@ from sklearn.tree import DecisionTreeRegressor
 tree = DecisionTreeRegressor(max_depth=3).fit(X, y)
 y_pred = tree.predict(X)
 
-plt.plot(
-    x[sorted_idx], y_pred[sorted_idx],
-    linewidth=3, color="tab:orange"
-)
+plt.plot(x[sorted_idx], y_pred[sorted_idx], color="tab:orange")
 plt.scatter(x, y)
-plt.xlabel("x", size=26)
-plt.ylabel("y", size=26)
+plt.xlabel("x")
+plt.ylabel("y")
 _ = plt.title(
     f"Mean squared error = "
     f"{mean_squared_error(y, y_pred):.2f}"
@@ -135,10 +134,10 @@ _ = plt.title(
 #
 # Instead, one is usually creating interaction between features (e.g. $x_1 *
 # x_2$) with different orders (e.g. $x_1, x_1^2, x_1^3$), at the risk of
-# creating a model with too much expressivity and which might overfit. In
-# scikit-learn, the `PolynomialFeatures` is a transformer to create such
-# feature interactions which we could have used instead of manually creating
-# new features.
+# creating a model with too much flexibility where the polynomial terms allows
+# to fit noise in the dataset and thus lead overfit. In scikit-learn, the
+# `PolynomialFeatures` is a transformer to create such feature interactions
+# which we could have used instead of manually creating new features.
 #
 # To demonstrate `PolynomialFeatures`, we are going to use a scikit-learn
 # pipeline which will first create the new features and then fit the model.
@@ -156,13 +155,10 @@ model = make_pipeline(
 model.fit(X, y)
 y_pred = model.predict(X)
 
-plt.plot(
-    x[sorted_idx], y_pred[sorted_idx],
-    linewidth=4, color="tab:orange"
-)
+plt.plot(x[sorted_idx], y_pred[sorted_idx], color="tab:orange")
 plt.scatter(x, y)
-plt.xlabel("x", size=26)
-plt.ylabel("y", size=26)
+plt.xlabel("x")
+plt.ylabel("y")
 _ = plt.title(
     f"Mean squared error = "
     f"{mean_squared_error(y, y_pred):.2f}"
@@ -171,10 +167,6 @@ _ = plt.title(
 # %% [markdown]
 # Thus, we saw that `PolynomialFeatures` is actually doing the same
 # operation that we did manually above.
-
-# %% [markdown]
-# **FIXME: it might be to complex to be introduced here but it seems good in
-# the flow. However, we go away from linear model.**
 #
 # The last possibility is to make a linear model more expressive is to use a
 # "kernel". Instead of learning a weight per feature as we previously
@@ -189,13 +181,10 @@ svr = SVR(kernel="linear")
 svr.fit(X, y)
 y_pred = svr.predict(X)
 
-plt.plot(
-    x[sorted_idx], y_pred[sorted_idx],
-    linewidth=4, color="tab:orange"
-)
+plt.plot(x[sorted_idx], y_pred[sorted_idx], color="tab:orange")
 plt.scatter(x, y)
-plt.xlabel("x", size=26)
-plt.ylabel("y", size=26)
+plt.xlabel("x")
+plt.ylabel("y")
 _ = plt.title(
     f"Mean squared error = "
     f"{mean_squared_error(y, y_pred):.2f}"
@@ -211,10 +200,7 @@ svr = SVR(kernel="poly", degree=3)
 svr.fit(X, y)
 y_pred = svr.predict(X)
 
-plt.plot(
-    x[sorted_idx], y_pred[sorted_idx],
-    linewidth=4, color="tab:orange"
-)
+plt.plot(x[sorted_idx], y_pred[sorted_idx], color="tab:orange")
 plt.scatter(x, y)
 plt.xlabel("x", size=26)
 plt.ylabel("y", size=26)
